@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificação</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info {
+            text-align: center;
+            font-size: 1.1em;
+            color: #495057;
+        }
+        fieldset {
+            border: 1px solid #343a40;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Identificação</h2>
+    <img src="sua-imagem.jpg" alt="Minha foto">
+    <div class="info">
+        <p>Nome: Carla Beatriz Bacelar Coelho da Silva Souza</p>
+        <p>Email: <a href="mailto:carlabeatrizcbbc@gmail.com">carlabeatrizcbbc@gmail.com</a></p>
+        <p>Telefone: (81) 99283-9357</p>
+    </div>
+
+    <a href="file:///D:/%C3%81rea%20de%20Trabalho/curriculo.html/contato.html" class="btn btn-primary">Preencher Formulário</a>
+
+    <form id="identificacaoForm" class="mt-4" style="display: none;" id="formulario">
+        <fieldset>
+            <legend>Formulário de Identificação</legend>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" class="form-control" id="sobrenome" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="(XX) XXXXX-XXXX" required pattern="\(\d{2}\) \d{5}-\d{4}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea class="form-control" id="mensagem" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="lingua">Língua Aplicada no Serviço:</label>
+                <select class="form-control" id="lingua" required>
+                    <option value="">Selecione...</option>
+                    <option value="ingles">Inglês</option>
+                    <option value="espanhol">Espanhol</option>
+                    <option value="frances">Francês</option>
+                    <option value="portugues">Português (pt-br)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="upload">Upload do Protótipo:</label>
+                <input type="file" class="form-control-file" id="upload" accept=".pdf, .doc, .docx, .jpeg, .jpg, .png" required>
+            </div>
+            <div class="form-group">
+                <label>Linguagens Preferidas:</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="html" id="html">
+                    <label class="form-check-label" for="html">HTML</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="css" id="css">
+                    <label class="form-check-label" for="css">CSS</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="js" id="js">
+                    <label class="form-check-label" for="js">JavaScript</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Banco de Dados Recomendado:</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="banco" value="mysql" id="mysql" required>
+                    <label class="form-check-label" for="mysql">MySQL</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="banco" value="postgres" id="postgres" required>
+                    <label class="form-check-label" for="postgres">PostgreSQL</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="turno">Turno de Preferência para Reuniões:</label>
+                <select class="form-control" id="turno" required>
+                    <option value="">Selecione...</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hora">Melhor Horário Sugerido para Reuniões:</label>
+                <input type="time" class="form-control" id="hora" required>
+            </div>
+            <div class="form-group">
+                <label for="data">Previsão de Entrega Desejada:</label>
+                <input type="date" class="form-control" id="data" required>
+            </div>
+            <button type="reset" class="btn btn-secondary">Limpar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </fieldset>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Mostrar o formulário ao clicar no link
+        document.querySelector('a[href="#formulario"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            const form = document.getElementById('identificacaoForm');
+            form.style.display = 'block';
+            form.scrollIntoView({ behavior: 'smooth' }); // Rola para o formulário
+        });
+
+        // Validação do formulário
+        document.getElementById('identificacaoForm').addEventListener('submit', function(event) {
+            if (!this.checkValidity()) {
+                event.preventDefault();
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+    </script>
+</body>
+</html>

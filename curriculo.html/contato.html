@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif; /* Certifique-se de que essa é a fonte usada */
+            background-color: #f8f9fa; /* Cor de fundo do currículo */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #343a40; /* Cor do título */
+        }
+        fieldset {
+            border: 2px solid rgb(144, 54, 130); /* Cor da borda do fieldset */
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+        }
+        legend {
+            font-weight: bold;
+            color: rgb(144, 54, 130); /* Cor do título do fieldset */
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: rgb(144, 54, 130); /* Cor dos links */
+            font-weight: 700;
+        }
+        nav a:hover {
+            color: rgb(100, 30, 100); /* Cor ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulário de Contato</h1>
+
+        <form id="contactForm">
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" class="form-control" id="sobrenome" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" class="form-control" id="telefone" placeholder="(00) 00000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea class="form-control" id="mensagem" rows="5" required></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferências de Serviço</legend>
+                <div class="form-group">
+                    <label for="lingua">Língua aplicada no serviço:</label>
+                    <select class="form-control" id="lingua" required>
+                        <option value="">Selecione</option>
+                        <option value="ingles">Inglês</option>
+                        <option value="espanhol">Espanhol</option>
+                        <option value="frances">Francês</option>
+                        <option value="portugues">Português (pt-br)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="arquivo">Upload de arquivo (PDF, DOC, DOCX, JPEG, PNG):</label>
+                    <input type="file" class="form-control-file" id="arquivo" accept=".pdf, .doc, .docx, .jpeg, .png" required>
+                </div>
+                <div class="form-group">
+                    <label>Preferências de Linguagens:</label>
+                    <select class="form-control" id="linguagens" multiple required>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="php">PHP</option>
+                        <option value="csharp">C#</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de banco de dados recomendado:</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="sql" name="banco" value="sql" required>
+                        <label class="form-check-label" for="sql">SQL</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="nosql" name="banco" value="nosql" required>
+                        <label class="form-check-label" for="nosql">NoSQL</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="turno">Turno de preferência para reuniões:</label>
+                    <select class="form-control" id="turno" required>
+                        <option value="">Selecione</option>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="horario">Melhor horário sugerido para reuniões:</label>
+                    <input type="time" class="form-control" id="horario" required>
+                </div>
+                <div class="form-group">
+                    <label for="dataEntrega">Previsão de entrega desejada:</label>
+                    <input type="date" class="form-control" id="dataEntrega" required>
+                </div>
+            </fieldset>
+
+            <button type="reset" class="btn btn-danger">Limpar</button>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const form = event.target;
+            if (!form.checkValidity()) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                event.preventDefault(); // Impede o envio se não for válido
+            }
+        });
+    </script>
+</body>
+</html>
